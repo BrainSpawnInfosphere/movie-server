@@ -1,28 +1,29 @@
 {
-  "name": "movie-server",
-  "version": "1.0.0",
-  "description": "Movie server",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/walchko.git"
-  },
-  "keywords": [
-    "movie",
-    "server"
-  ],
-  "author": "Kevin Walchko",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/github.com/walchko/issues"
-  },
-  "homepage": "https://github.com/github.com/walchko#readme",
-  "dependencies": {
-    "http-server": "^0.8.5",
-    "debug": "*",
-    "commander": "*"
-  }
+	"name": "movie-server",
+	"version": "1.0.0",
+	"description": "Movie server",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"debug": "DEBUG=* node server.js --web './test/' "
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/walchko/movie-server.git"
+	},
+	"keywords": [
+		"movie",
+		"server"
+	],
+	"author": "Kevin Walchko",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/walchko/movie-server/issues"
+	},
+	"homepage": "https://github.com/walchko/movie-server",
+	"dependencies": {
+		"http-server": "*",
+		"debug": "*",
+		"commander": "*"
+	}
 }

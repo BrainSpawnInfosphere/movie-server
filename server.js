@@ -4,11 +4,11 @@
 // curl -i -X PUT http://localhost:8001/api --data '{"name":"tom", "age":45.77}' -H "Content-Type: application/json"
 // curl -i -X GET http://tardis.local:8001/test.html
 
-var http_debug = require('debug')('kevin:http')
-var http = require('http');
-var program = require('commander');
-var fs = require('fs');
-var server;
+var http_debug = require('debug')('kevin:http') // debug
+var http = require('http');                     // http-server
+var program = require('commander');             // command line args
+var fs = require('fs');                         // read files
+var server;                                     // actual server
 
 program
 	.version('1.0.0')
@@ -26,8 +26,7 @@ var spawn = require('child_process').exec;
 // });
 
 console.log('Server started on localhost',program.port);
-
-console.log('cli: ',program.movies, program.web);
+// console.log('cli: ',program.movies, program.web);
 
 ///////////////////////////////////
 
