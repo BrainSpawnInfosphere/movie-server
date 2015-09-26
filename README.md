@@ -1,5 +1,17 @@
 # Movie Server
 
+[![Build Status](https://travis-ci.org/walchko/movie-server.svg?branch=master)]
+(https://travis-ci.org/walchko/movie-server)
+
+[![npm](https://img.shields.io/npm/v/movie-server.svg)]
+(https://www.npmjs.com/package/movie-server)
+
+[![npm](https://img.shields.io/npm/l/movie-server.svg)]
+(https://www.npmjs.com/package/movie-server)
+
+[![npm](https://img.shields.io/npm/dt/movie-server.svg)]
+(https://www.npmjs.com/package/movie-server)
+
 ![webpage](./images/webpage.png)
 
 ![modal](./images/modal.png)
