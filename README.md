@@ -1,13 +1,9 @@
 # Movie Server
 
-[![Build Status](https://travis-ci.org/walchko/movie-server.svg?branch=master)]
-(https://travis-ci.org/walchko/movie-server)
-[![npm](https://img.shields.io/npm/v/movie-server.svg)]
-(https://www.npmjs.com/package/movie-server)
-[![npm](https://img.shields.io/npm/l/movie-server.svg)]
-(https://www.npmjs.com/package/movie-server)
-[![npm](https://img.shields.io/npm/dt/movie-server.svg)]
-(https://www.npmjs.com/package/movie-server)
+[![Build Status](https://travis-ci.org/walchko/movie-server.svg?branch=master)](https://travis-ci.org/walchko/movie-server)
+[![npm](https://img.shields.io/npm/v/movie-server.svg)](https://www.npmjs.com/package/movie-server)
+[![npm](https://img.shields.io/npm/l/movie-server.svg)](https://www.npmjs.com/package/movie-server)
+[![npm](https://img.shields.io/npm/dt/movie-server.svg)](https://www.npmjs.com/package/movie-server)
 
 ![webpage](./images/webpage.png)
 
@@ -48,12 +44,23 @@ Some of the options:
 
 Now navigate to `localhost:8000/movie.html` to access your movies via the web browser.
 
+### Work in Progress
+
+Need to fix, but right now:
+
+* create a new directory and `cd` into it
+* `npm install movie-server`
+* `cd` into `node_modules/movie-server`
+* `npm run-script debug`
+
 ### API
 
 You can also use `GET` and `PUT` methods:
 
 * `GET` retrieves all of the movie data in json format
 * `PUT` tells the program to reload the movie database because something has changed 
+
+You can use `curl` to do this:
 
 	curl -i -X GET http://tardis.local:8000/api 
 	curl -i -X PUT http://tardis.local:8000/api 

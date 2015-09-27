@@ -1,6 +1,6 @@
 {
 	"name": "movie-server",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "Movie server",
 	"main": "server.js",
 	"scripts": {
@@ -25,5 +25,9 @@
 		"http-server": "*",
 		"debug": "*",
 		"commander": "*"
+	},
+	"bin": {
+		"movie-server": "node server.js",
+		"ms":  "node server.js"
 	}
 }
