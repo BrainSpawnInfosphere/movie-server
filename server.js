@@ -10,8 +10,10 @@ var program = require('commander');             // command line args
 var fs = require('fs');                         // read files
 var server;                                     // actual server
 
+var pck = require('package.json');
+
 program
-	.version('1.0.0')
+	.version(pck.version)
 	.description('Movie server')
 	.option('-p, --port <port>','Http server port number',parseInt,8000)
 	.option('-m, --movies <path>','Location of movies','./')
