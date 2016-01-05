@@ -1,33 +1,35 @@
 {
-	"name": "movie-server",
-	"version": "1.0.2",
-	"description": "Movie server",
-	"main": "server.js",
-	"scripts": {
-		"test": "exit 0",
-		"debug": "DEBUG=* node server.js --web './test/' "
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/walchko/movie-server.git"
-	},
-	"keywords": [
-		"movie",
-		"server"
-	],
-	"author": "Kevin Walchko",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/walchko/movie-server/issues"
-	},
-	"homepage": "https://github.com/walchko/movie-server",
-	"dependencies": {
-		"http-server": "*",
-		"debug": "*",
-		"commander": "*"
-	},
-	"bin": {
-		"movie-server": "node server.js",
-		"ms":  "node server.js"
-	}
+  "name": "movie-server",
+  "version": "1.0.2",
+  "description": "Movie server",
+  "main": "server.js",
+  "scripts": {
+    "test": "exit 0",
+    "debug": "DEBUG=* node server.js --web './test/' "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walchko/movie-server.git"
+  },
+  "keywords": [
+    "movie",
+    "server"
+  ],
+  "author": "Kevin Walchko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/walchko/movie-server/issues"
+  },
+  "homepage": "https://github.com/walchko/movie-server",
+  "dependencies": {
+    "commander": "*",
+    "debug": "*",
+    "http-server": "*",
+    "moviedb": "^0.2.2",
+    "request": "^2.67.0"
+  },
+  "bin": {
+    "movie-server": "node server.js",
+    "ms": "node server.js"
+  }
 }
