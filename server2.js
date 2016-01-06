@@ -4,13 +4,12 @@
 // curl -i -X PUT http://localhost:8001/api --data '{"name":"tom", "age":45.77}' -H "Content-Type: application/json"
 // curl -i -X GET http://tardis.local:8001/test.html
 
-var process = require('process');
-var mdb = require('moviedb')(process.env.TMDB);
+var findMovies = require('./lib/findMovies.js');
+var tmdb = require('./lib/tmdb.js');
 
 var http_debug = require('debug')('kevin:http') // debug
 var http = require('http');                     // http-server
 var program = require('commander');             // command line args
-var fs = require('fs');                         // read files
 var server;                                     // actual server
 
 var pck = require('./package.json');
@@ -33,52 +32,10 @@ var spawn = require('child_process').exec;
 console.log('Server started on localhost',program.port);
 // console.log('cli: ',program.movies, program.web);
 
-
-function getMovies(path){
-// 	var ls = spawn('ls -alh');
-// 	console.log( ls );
-// 	ls.stdout.on('data', function(data){
-// 		console.log(JSON.stringify(data));
-// 	});
-
-	var f = fs.readdirSync(path);
-// 	console.log( 'inside', f );
-	return f;
-};
-
-var f = getMovies('./movies');
-// console.log( 'outside' + f );
-for(var i=0; i<f.length ; i++){
-	console.log( 'file: ' + f[i] );
-}
-
-// keep only movies and remove file extension
-var movie_list = f.filter(function(e) { return e.search('.m4v')>0; });
-
-for(var i=0;i<movie_list.length;i++){
-	movie_list[i] = {movie: movie_list[i].replace('.m4v','').replace('_',' ').toLowerCase(), file: movie_list[i]}; 
-}
+var movie_list = findMovies('./movies');
 console.log(movie_list);
 
-
-function getMovieInfo(movie_name){
-	console.log('sending '+movie_name);
-	return new Promise(function(resolve,reject){
-		mdb.searchMovie({query: movie_name, adult: false }, function(err, res){resolve( res );});
-	});
-}
-
-function getAllMovieInfo(list){
-	for(var i=0;i<list.length;i++){
-		getMovieInfo(list[i].movie).then( function(response){
-			console.log(': '+ JSON.stringify(response.results[0])+'\n\n');
-		});
-	}
-}
-
-//  http://api.themoviedb.org/3/search/movie/{query:'alien',api_key:'f3213fa916c74e9d3b01358e2a11945a'}
-
-getAllMovieInfo(movie_list);
+tmdb(movie_list);
 
 // getMovieInfo('alien').then( function(response){
 // 	console.log('resp: '+response);
